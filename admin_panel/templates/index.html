@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Записи на экскурсии</title>
+		<style>
+			table {
+				width: 100%;
+				border-collapse: collapse;
+				margin-top: 20px;
+			}
+			th,
+			td {
+				border: 1px solid #ccc;
+				padding: 8px;
+				text-align: left;
+			}
+			th {
+				background: #f0f0f0;
+			}
+			input {
+				margin-right: 10px;
+			}
+		</style>
+	</head>
+	<body>
+		<h2>Записи на экскурсии</h2>
+
+		<form method="get">
+			<input
+				type="text"
+				name="route"
+				placeholder="Маршрут"
+				value="{{ route }}"
+			/>
+			<input type="date" name="date" value="{{ date }}" />
+			<button type="submit">Фильтр</button>
+		</form>
+
+		<table>
+			<tr>
+				<th>Имя</th>
+				<th>Username</th>
+				<th>Тип</th>
+				<th>Маршрут</th>
+				<th>Дата</th>
+			</tr>
+			{% for row in records %}
+			<tr>
+				<td>{{ row['Имя'] }}</td>
+				<td>@{{ row['Username'] }}</td>
+				<td>{{ row['Тип экскурсии'] }}</td>
+				<td>{{ row['Маршрут'] }}</td>
+				<td>{{ row['Дата'] }}</td>
+			</tr>
+			{% endfor %}
+		</table>
+	</body>
+</html>

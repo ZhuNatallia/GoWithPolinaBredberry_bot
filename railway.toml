@@ -1,0 +1,6 @@
+[services.bot]
+command = "python3 bot/bot.py"
+
+[services.web]
+command = "python3 admin_panel/app.py"
+port = 5000

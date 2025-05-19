@@ -1,0 +1,1 @@
+# init file для admin_panel
